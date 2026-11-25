@@ -6,9 +6,9 @@ App Flutter con Material 3. Permite crear una cuenta, iniciar sesión, guardar l
 
 1. Instala o habilita el plugin **Flutter**. Abre la carpeta completa `prestacontrol_app` con **File → Open**.
 2. Configura el SDK de Flutter y ejecuta `flutter pub get` desde la terminal de Android Studio.
-3. Con la API local en el puerto 8080, selecciona un emulador Android y pulsa **Run**. La URL predeterminada en modo debug para el emulador es `http://10.0.2.2:8080`.
+3. Selecciona un emulador Android o tu celular y pulsa **Run**. La app usa [la API de Render](https://prestacontrol-arcila-api.onrender.com/health) de forma predeterminada.
 
-### Celular por USB
+### API local por USB
 
 En el celular, habilita la depuración USB y autoriza a tu computadora. Conecta el celular, inicia la API local y ejecuta desde la carpeta de la app:
 
@@ -22,10 +22,10 @@ Con varios dispositivos conectados, elige el serial con `adb -s SERIAL reverse t
 ### APK para Render
 
 ```powershell
-flutter build apk --release --dart-define=API_BASE_URL=https://TU-API.onrender.com
+flutter build apk --release
 ```
 
-El APK queda en `build/app/outputs/flutter-apk/`. El modo release requiere la URL HTTPS configurada con `API_BASE_URL`.
+El APK queda en `build/app/outputs/flutter-apk/`. Para probar con otra API HTTPS, configura `API_BASE_URL` con `--dart-define`.
 
 ## Flujo de exposición
 
